@@ -1,4 +1,3 @@
-// src/types/index.ts
 export interface SalesData {
   month: string;
   value: number;
@@ -28,7 +27,8 @@ export interface UserStats {
 export interface PropertyListing {
   id: string;
   title: string;
-  image: string;
+  image?: string;
+  images?: string[];
   category: "most-clicked" | "most-watchlisted" | "hottest-listing";
 }
 

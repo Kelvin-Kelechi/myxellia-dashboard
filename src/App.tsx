@@ -21,7 +21,7 @@ function App() {
 
   const user = {
     name: "Ahmed",
-    initials: "D", // Using 'D' as shown in the design
+    initials: "D", 
   };
 
   const renderPage = () => {
@@ -73,9 +73,14 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header user={user} />
-      <Navigation items={navigationItems} onItemClick={handleNavigationClick} />
-      {renderPage()}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow">
+        <Header user={user} />
+        <Navigation
+          items={navigationItems}
+          onItemClick={handleNavigationClick}
+        />
+      </div>
+      <div className="pt-[150px]"> {renderPage()}</div>
     </div>
   );
 }

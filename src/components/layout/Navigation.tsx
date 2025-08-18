@@ -1,7 +1,7 @@
 import React from "react";
 import { clsx } from "clsx";
-import { AiOutlineSearch } from "react-icons/ai";
 import type { NavigationItem } from "../../types";
+import { RiSearchLine } from "react-icons/ri";
 
 interface NavigationProps {
   items: (NavigationItem & {
@@ -49,14 +49,16 @@ export const Navigation: React.FC<NavigationProps> = ({
         </div>
 
         <div className="relative">
-          <AiOutlineSearch
-            size={18}
-            className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+          <RiSearchLine
+            size={24}
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 text-black"
           />
           <input
             type="text"
             placeholder="Search listings, users here..."
-            className="pl-10 pr-4 py-2 w-80 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="pl-10 pr-4 py-2 w-80 border border-gray-300 rounded-lg 
+               focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent 
+               placeholder:text-xs placeholder:text-gray-400"
           />
         </div>
       </div>
