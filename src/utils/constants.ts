@@ -1,20 +1,63 @@
-import { Home, Building2, Users, FileText, Briefcase } from "lucide-react";
+ 
 import type {
   NavigationItem,
   SalesData,
   MetricData,
   PropertyListing,
 } from "../types";
+import { GoHomeFill, GoHome } from "react-icons/go";
+import {
+  PiScrollFill,
+  PiScrollLight,
+  PiToolboxFill,
+  PiToolboxLight,
+} from "react-icons/pi";
+import { TiUser, TiUserOutline } from "react-icons/ti";
+import { TbArticle, TbArticleFilled } from "react-icons/tb";
 
-export const NAVIGATION_ITEMS: NavigationItem[] = [
-  { id: "dashboard", label: "Dashboard", icon: Home, href: "/", active: true },
-  { id: "listings", label: "Listings", icon: Building2, href: "/listings" },
-  { id: "users", label: "Users", icon: Users, href: "/users" },
-  { id: "request", label: "Request", icon: FileText, href: "/request" },
+export const NAVIGATION_ITEMS: (NavigationItem & {
+  filledIcon: React.ComponentType;
+  outlineIcon: React.ComponentType;
+})[] = [
+  {
+    id: "dashboard",
+    label: "Dashboard",
+    icon: GoHome,
+    filledIcon: GoHomeFill,
+    outlineIcon: GoHome,
+    href: "/",
+    active: true,
+  },
+  {
+    id: "listings",
+    label: "Listings",
+    icon: PiToolboxLight,
+    filledIcon: PiToolboxFill,
+    outlineIcon: PiToolboxLight,
+    href: "/listings",
+  },
+  {
+    id: "users",
+    label: "Users",
+    icon: TiUserOutline,
+    filledIcon: TiUser,
+    outlineIcon: TiUserOutline,
+    href: "/users",
+  },
+  {
+    id: "request",
+    label: "Request",
+    icon: TbArticle,
+    filledIcon: TbArticleFilled,
+    outlineIcon: TbArticle,
+    href: "/request",
+  },
   {
     id: "applications",
     label: "Applications",
-    icon: Briefcase,
+    icon: PiScrollLight,
+    filledIcon: PiScrollFill,
+    outlineIcon: PiScrollLight,
     href: "/applications",
   },
 ];

@@ -1,11 +1,13 @@
 import React from "react";
 import { clsx } from "clsx";
-import { Search } from "lucide-react";
+import { AiOutlineSearch } from "react-icons/ai";
 import type { NavigationItem } from "../../types";
- 
 
 interface NavigationProps {
-  items: NavigationItem[];
+  items: (NavigationItem & {
+    filledIcon: React.ComponentType;
+    outlineIcon: React.ComponentType;
+  })[];
   onItemClick: (item: NavigationItem) => void;
 }
 
@@ -14,11 +16,13 @@ export const Navigation: React.FC<NavigationProps> = ({
   onItemClick,
 }) => {
   return (
-    <nav className="bg-gray-50 px-6 py-4 border-b border-gray-200">
+    <nav className="bg-white px-20 py-4 border-b border-gray-200">
       <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-8">
+        <div className="flex items-center space-x-16">
           {items.map((item) => {
-            const Icon = item.icon;
+            const Icon = (
+              item.active ? item.filledIcon : item.outlineIcon
+            ) as React.ComponentType<{ size?: number; className?: string }>;
             return (
               <button
                 key={item.id}
@@ -26,11 +30,18 @@ export const Navigation: React.FC<NavigationProps> = ({
                 className={clsx(
                   "flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
                   item.active
-                    ? "bg-white text-gray-900 shadow-sm"
-                    : "text-gray-600 hover:text-gray-900 hover:bg-white"
+                    ? "bg-[#F5F5F5] text-gray-900  px-6"
+                    : "text-gray-600 hover:text-gray-900 hover:bg-white  px-6"
                 )}
               >
-                <Icon size={18} />
+                <Icon
+                  size={24}
+                  className={
+                    item.active
+                      ? "text-black"
+                      : "text-gray-600 group-hover:text-black"
+                  }
+                />
                 <span>{item.label}</span>
               </button>
             );
@@ -38,7 +49,7 @@ export const Navigation: React.FC<NavigationProps> = ({
         </div>
 
         <div className="relative">
-          <Search
+          <AiOutlineSearch
             size={18}
             className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
           />

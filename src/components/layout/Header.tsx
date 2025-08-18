@@ -1,6 +1,8 @@
 import React from "react";
-import { Bell, Calendar, Calculator, Dice6 } from "lucide-react";
-
+import { TbCalculatorFilled, TbMessage2Filled } from "react-icons/tb";
+import { RiNotification2Fill } from "react-icons/ri";
+import { FaCalendarAlt } from "react-icons/fa";
+import myxillia from  '/src/assets/images/Myxellia-admin.png'
 interface HeaderProps {
   user: {
     name: string;
@@ -10,32 +12,31 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ user }) => {
   return (
-    <header className="bg-gray-900 text-white px-6 py-4">
+    <header className="bg-[#191919] text-white px-20 py-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
-            <div className="w-6 h-6 bg-gray-900 rounded-sm flex items-center justify-center">
-              <div className="text-white text-xs font-bold">⚙</div>
-            </div>
-          </div>
-          <span className="text-xl font-semibold">myxellia</span>
+          <img
+            src={myxillia}
+            className="h-6 w-auto object-contain mr-4"
+            alt="logo"
+          />
         </div>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2">
           <button className="p-2 hover:bg-gray-800 rounded-lg">
-            <Bell size={20} />
+            <RiNotification2Fill size={27} />
           </button>
           <button className="p-2 hover:bg-gray-800 rounded-lg">
-            <Calendar size={20} />
+            <TbCalculatorFilled size={27} />
           </button>
           <button className="p-2 hover:bg-gray-800 rounded-lg">
-            <Calculator size={20} />
+            <FaCalendarAlt size={22} />
           </button>
           <button className="p-2 hover:bg-gray-800 rounded-lg">
-            <Dice6 size={20} />
+            <TbMessage2Filled size={27} />
           </button>
 
-          <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center font-medium">
+          <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center font-medium">
             {user.initials}
           </div>
         </div>

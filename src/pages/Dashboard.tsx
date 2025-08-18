@@ -4,7 +4,6 @@ import { ListingsOverview } from "../components/dashboard/ListingsOverview";
 import { UsersOverview } from "../components/dashboard/UsersOverview";
 import { PROPERTY_LISTINGS } from "../utils/constants";
 import { PropertyCard } from "../components/dashboard/PropertyCard";
- 
 
 export const Dashboard: React.FC = () => {
   return (
@@ -16,12 +15,10 @@ export const Dashboard: React.FC = () => {
           </h1>
         </div>
         <div className="grid grid-cols-3 gap-6">
-          {/* Sales Overview - spans 2 columns */}
           <div className="col-span-2">
             <SalesOverview />
           </div>
 
-          {/* Right Side Cards - spans 1 column */}
           <div className="space-y-6">
             <ListingsOverview />
             <UsersOverview />
