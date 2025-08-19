@@ -1,70 +1,72 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Myxellia Dashboard Clone
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A professional Myxellia-inspired dashboard built with Vite, React, TypeScript, and Tailwind CSS, featuring a scalable project structure and modern development practices
 
-## Expanding the ESLint configuration
+# Features Implemented
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Core Layout
+- **Header**: Dark theme with Myxellia branding and user avatar
+- **Navigation**: Tab-based navigation with search functionality
+- **Responsive Design**: Mobile-friendly layout
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Dashboard Components
+- **Sales Overview**: Interactive chart with metrics cards
+- **Listings Overview**: Statistics cards with view all functionality
+- **Users Overview**: User metrics display
+- **Property Cards**: Featured property listings with categories
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Interactive Elements
+- **Time Period Selector**: 1 Week, 1 Month, 1 Year options
+- **Navigation Tabs**: Dashboard, Listings, Users, Request, Applications
+- **Metric Cards**: Color-coded performance indicators
+- **Chart Visualization**: Multi-series bar chart using Recharts
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Technical Features
+- **TypeScript**: Full type safety
+- **Professional Architecture**: Clean component structure
+- **Responsive Design**: Tailwind CSS utilities
+- **State Management**: React hooks for local state
+- **Modular Components**: Reusable UI components
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Technical Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **React 19** with TypeScript
+- **Tailwind CSS v4**
+- **Vite** for build tooling
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# myxellia-dashboard
+## Getting Started
+
+To run the project locally:
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/Kelvin-Kelechi/myxellia-dashboard.git
+   cd myxellia-dashboard
+   ```
+
+2. **Install dependencies**  
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**  
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**  
+   ```bash
+   npm run build
+   ```
+
+5. **Preview production build**  
+   ```bash
+   npm run preview
+   ```
+
+
+ 
+ 
